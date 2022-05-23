@@ -49,7 +49,7 @@ class Ui_MainWindow(object):
         self.label.setPixmap(QtGui.QPixmap(":/img/img/logov2.png"))
         self.label.setObjectName("label")
         self.label_2 = QtWidgets.QLabel(self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(220, 90, 381, 51))
+        self.label_2.setGeometry(QtCore.QRect(250, 90, 381, 51))
         font = QtGui.QFont()
         font.setFamily("Lucida Console")
         font.setPointSize(28)
@@ -106,9 +106,9 @@ class Ui_MainWindow(object):
         self.label_5.setText(_translate("MainWindow", "Практика"))
 
         # Обработчики события нажатия на кнопку
-        self.mainBtnLessons.clicked.connect(lambda: self.onClick_btn('lessonsTest.py'))
-        self.mainBtnTests.clicked.connect(lambda: self.onClick_btn('testTest.py'))
-        self.mainBtnPractice.clicked.connect(lambda: self.onClick_btn('practiceTest.py'))
+        self.mainBtnLessons.clicked.connect(lambda: self.onClick_btn('lessons.py'))
+        self.mainBtnTests.clicked.connect(lambda: self.onClick_btn('test.py'))
+        self.mainBtnPractice.clicked.connect(lambda: self.onClick_btn('practice.py'))
         
     def onClick_btn(self, src):
         if self.code == None or self.code.poll() != None:

@@ -1,5 +1,3 @@
-
-
 confirmBtn.addEventListener("click", (e)=> {
     let right = 0;
     answers.forEach((el) => {

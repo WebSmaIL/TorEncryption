@@ -81,14 +81,14 @@ class Ui_MainWindow(object):
 
         # Заполнение селектов в comboBox из названий файлов
         for item in range (self.comboBox.count()):
-            self.comboBox.setItemText(item, self.filesArr[item].split('.')[0])
+            self.comboBox.setItemText(item, self.filesArr[item].split('.')[0][6:])
 
      # Открытие лекции
         self.pushButton.clicked.connect(lambda: self.openLesson())
         
     def openLesson(self):
         # Функция открытия pdf файла
-        str = self.comboBox.currentText() + ".py"
+        str = "crypt-" + self.comboBox.currentText() + ".py"
  
         if self.code == None or self.code.poll() != None:
             self.code = subprocess.Popen([sys.executable, str])

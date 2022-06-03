@@ -1,0 +1,125 @@
+from PyQt5 import QtCore, QtGui, QtWidgets
+import resourse
+import subprocess
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(790, 390)
+        MainWindow.setMinimumSize(QtCore.QSize(790, 390))
+        MainWindow.setMaximumSize(QtCore.QSize(790, 390))
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/img/img/logo100x100.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        MainWindow.setWindowIcon(icon)
+        MainWindow.setStyleSheet("background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0.977273, stop:0 rgba(114, 0, 156, 255), stop:1 rgba(195, 0, 255, 255));")
+        self.code = None
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.mainBtnLessons = QtWidgets.QPushButton(self.centralwidget)
+        self.mainBtnLessons.setGeometry(QtCore.QRect(100, 170, 150, 150))
+        self.mainBtnLessons.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.mainBtnLessons.setText("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(":/img/img/lection.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.mainBtnLessons.setIcon(icon1)
+        self.mainBtnLessons.setIconSize(QtCore.QSize(100, 100))
+        self.mainBtnLessons.setObjectName("mainBtnLessons")
+        self.mainBtnTests = QtWidgets.QPushButton(self.centralwidget)
+        self.mainBtnTests.setGeometry(QtCore.QRect(330, 170, 150, 150))
+        self.mainBtnTests.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.mainBtnTests.setText("")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap(":/img/img/test.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.mainBtnTests.setIcon(icon2)
+        self.mainBtnTests.setIconSize(QtCore.QSize(120, 120))
+        self.mainBtnTests.setObjectName("mainBtnTests")
+        self.mainBtnPractice = QtWidgets.QPushButton(self.centralwidget)
+        self.mainBtnPractice.setGeometry(QtCore.QRect(550, 170, 150, 150))
+        self.mainBtnPractice.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.mainBtnPractice.setText("")
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap(":/img/img/encryption.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.mainBtnPractice.setIcon(icon3)
+        self.mainBtnPractice.setIconSize(QtCore.QSize(120, 120))
+        self.mainBtnPractice.setObjectName("mainBtnPractice")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(370, 10, 71, 71))
+        self.label.setStyleSheet("background-color: rgba(255, 255, 255, 0);")
+        self.label.setText("")
+        self.label.setPixmap(QtGui.QPixmap(":/img/img/logov2.png"))
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(self.centralwidget)
+        self.label_2.setGeometry(QtCore.QRect(250, 90, 381, 51))
+        font = QtGui.QFont()
+        font.setFamily("Lucida Console")
+        font.setPointSize(28)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_2.setFont(font)
+        self.label_2.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: rgba(255, 255, 255, 0);")
+        self.label_2.setObjectName("label_2")
+        self.label_3 = QtWidgets.QLabel(self.centralwidget)
+        self.label_3.setGeometry(QtCore.QRect(130, 320, 101, 31))
+        font = QtGui.QFont()
+        font.setFamily("Consolas")
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_3.setFont(font)
+        self.label_3.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: rgba(255, 255, 255, 0);")
+        self.label_3.setObjectName("label_3")
+        self.label_4 = QtWidgets.QLabel(self.centralwidget)
+        self.label_4.setGeometry(QtCore.QRect(365, 320, 81, 31))
+        font = QtGui.QFont()
+        font.setFamily("Consolas")
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_4.setFont(font)
+        self.label_4.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: rgba(255, 255, 255, 0);")
+        self.label_4.setObjectName("label_4")
+        self.label_5 = QtWidgets.QLabel(self.centralwidget)
+        self.label_5.setGeometry(QtCore.QRect(560, 320, 131, 31))
+        font = QtGui.QFont()
+        font.setFamily("Consolas")
+        font.setPointSize(18)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_5.setFont(font)
+        self.label_5.setStyleSheet("color: rgb(255, 255, 255);\n"
+"background-color: rgba(255, 255, 255, 0);")
+        self.label_5.setObjectName("label_5")
+        MainWindow.setCentralWidget(self.centralwidget)
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "TorEncryption"))
+        self.label_2.setText(_translate("MainWindow", "TorEncryption"))
+        self.label_3.setText(_translate("MainWindow", "Лекции"))
+        self.label_4.setText(_translate("MainWindow", "Тесты"))
+        self.label_5.setText(_translate("MainWindow", "Практика"))
+
+        # Обработчики события нажатия на кнопку
+        self.mainBtnLessons.clicked.connect(lambda: self.onClick_btn('lessons.py'))
+        self.mainBtnTests.clicked.connect(lambda: self.onClick_btn('test.py'))
+        self.mainBtnPractice.clicked.connect(lambda: self.onClick_btn('practice.py'))
+        
+    def onClick_btn(self, src):
+        if self.code == None or self.code.poll() != None:
+            self.code = subprocess.Popen([sys.executable, src])
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
